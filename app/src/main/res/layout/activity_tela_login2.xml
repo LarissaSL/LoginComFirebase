@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".telaLogin"
+    android:background="@drawable/mar">
+
+    <View
+        android:id="@+id/containerPrincipal"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:background="@drawable/container"
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/txtTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="Login"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toTopOf="@id/containerPrincipal"
+        app:layout_constraintStart_toStartOf="@id/containerPrincipal"
+        app:layout_constraintEnd_toEndOf="@id/containerPrincipal" />
+
+    <TextView
+        android:id="@+id/txtDescricao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="Preencha suas credenciais"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/txtTitulo"
+        app:layout_constraintStart_toStartOf="@id/containerPrincipal"
+        app:layout_constraintEnd_toEndOf="@id/containerPrincipal" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:hint="Email"
+        android:padding="15dp"
+        android:inputType="text"
+        android:maxLines="1"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/container_edit"
+        app:layout_constraintTop_toBottomOf="@id/txtDescricao"
+        app:layout_constraintStart_toStartOf="@id/containerPrincipal"
+        app:layout_constraintEnd_toEndOf="@id/containerPrincipal" />
+
+    <EditText
+        android:id="@+id/senha"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:hint="Senha"
+        android:padding="15dp"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/container_edit"
+        app:layout_constraintTop_toBottomOf="@id/email"
+        app:layout_constraintStart_toStartOf="@id/containerPrincipal"
+        app:layout_constraintEnd_toEndOf="@id/containerPrincipal" />
+
+    <TextView
+        android:id="@+id/esqueciASenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="Esqueci minha senha"
+        android:textSize="15sp"
+        android:textColor="@color/blue"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="30dp"
+        app:layout_constraintTop_toBottomOf="@id/senha"
+        app:layout_constraintStart_toStartOf="@+id/containerPrincipal"
+        app:layout_constraintEnd_toEndOf="@+id/containerPrincipal"
+        />
+
+    <Button
+        android:id="@+id/botaoEntrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="Entrar"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:padding="15dp"
+        android:backgroundTint="@color/blueFundo"
+        app:cornerRadius="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="40dp"
+        app:layout_constraintTop_toBottomOf="@id/esqueciASenha"
+        app:layout_constraintStart_toStartOf="@id/containerPrincipal"
+        app:layout_constraintEnd_toEndOf="@id/containerPrincipal" />
+
+    <Button
+        android:id="@+id/botaoCadastrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:backgroundTint="@color/blue"
+        android:padding="15dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Cadastrar"
+        android:onClick="irTelaCadastro"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/containerPrincipal"
+        app:layout_constraintEnd_toEndOf="@id/containerPrincipal"
+        app:layout_constraintStart_toStartOf="@id/containerPrincipal"
+        app:layout_constraintTop_toBottomOf="@id/botaoEntrar"
+        app:layout_constraintVertical_bias="0.300" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
