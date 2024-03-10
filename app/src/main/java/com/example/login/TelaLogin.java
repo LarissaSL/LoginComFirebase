@@ -66,7 +66,7 @@ public class TelaLogin extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     //Login feito com Sucesso
                     finish();
-                    startActivity(new Intent(TelaLogin.this, TelaPrincipal.class));
+                    startActivity(new Intent(TelaLogin.this, TelaPrincipal.class).putExtra("UidUser", auth.getCurrentUser().getUid()));
                 } else {
                     // Erros ao fazer login
                     Exception exception = task.getException();
