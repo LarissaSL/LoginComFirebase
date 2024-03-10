@@ -58,13 +58,9 @@ public class TelaCadastro extends AppCompatActivity {
                                                 if (task.isSuccessful()) {
                                                     // Cadastro bem-sucedido
                                                     Toast.makeText(TelaCadastro.this, mensagemDeSucesso, Toast.LENGTH_SHORT).show();
-                                                }
-
-                                                //Redirecionar para tela Principal do APP depois de 3s
-                                                new Handler(getMainLooper()).postDelayed(() -> {
                                                     finish();
-                                                    startActivity(new Intent(TelaCadastro.this, TelaPrincipal.class));
-                                                }, 3000);
+                                                    startActivity(new Intent(TelaCadastro.this, TelaPrincipal.class).putExtra("UidUser", auth.getCurrentUser().getUid()));
+                                                }
                                             }
                                         });
                             } else {
