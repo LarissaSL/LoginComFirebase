@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.Toast;
 
@@ -17,7 +16,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 
-public class telaLogin extends AppCompatActivity {
+public class TelaLogin extends AppCompatActivity {
     private ActivityTelaLoginBinding binding;
     private FirebaseAuth auth;
 
@@ -44,7 +43,7 @@ public class telaLogin extends AppCompatActivity {
     }
 
     public void irTelaCadastro(View view) {
-        Intent in = new Intent(this, telaCadastro.class);
+        Intent in = new Intent(this, TelaCadastro.class);
         startActivity(in);
     }
 
@@ -67,19 +66,27 @@ public class telaLogin extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     //Login feito com Sucesso
                     finish();
-                    startActivity(new Intent(telaLogin.this, telaPrincipal.class));
+                    startActivity(new Intent(TelaLogin.this, TelaPrincipal.class));
                 } else {
                     // Erros ao fazer login
                     Exception exception = task.getException();
-                    if (exception instanceof FirebaseAuthInvalidCredentialsException) {
-                        // Erro de Senha incorreta
-                        Toast.makeText(telaLogin.this, "Senha incorreta.", Toast.LENGTH_SHORT).show();
+                    if (exception instanceof FirebaseAuthInvalidUserException) {
+                        // Email não cadastrado
+                        Toast.makeText(TelaLogin.this, "E-mail não cadastrado", Toast.LENGTH_SHORT).show();
+                    } else if (exception instanceof FirebaseAuthInvalidCredentialsException) {
+                        // Senha incorreta
+                        Toast.makeText(TelaLogin.this, "Senha incorreta.", Toast.LENGTH_SHORT).show();
                     } else {
                         // Erro genérico
-                        Toast.makeText(telaLogin.this, "Erro ao fazer login.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(TelaLogin.this, "Erro ao fazer login.", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
         });
+    }
+
+    public void irTelaRecuperarSenha(View view){
+        Intent in = new Intent(this, TelaRecuperarSenha.class);
+        startActivity(in);
     }
 }

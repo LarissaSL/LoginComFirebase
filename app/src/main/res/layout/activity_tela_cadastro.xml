@@ -9,7 +9,7 @@
     <View
         android:id="@+id/containerPrincipal"
         android:layout_width="match_parent"
-        android:layout_height="420dp"
+        android:layout_height="500dp"
         android:background="@drawable/container"
         android:layout_marginHorizontal="20dp"
         app:layout_constraintTop_toTopOf="parent"
@@ -96,6 +96,25 @@
         android:layout_marginTop="20dp"
         android:layout_marginHorizontal="40dp"
         app:layout_constraintTop_toBottomOf="@id/senha"
+        app:layout_constraintStart_toStartOf="@id/containerPrincipal"
+        app:layout_constraintEnd_toEndOf="@id/containerPrincipal" />
+
+    <Button
+        android:id="@+id/botaoVoltar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="Voltar"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:padding="15dp"
+        android:backgroundTint="@color/blue"
+        android:onClick="irTelaLogin"
+        app:cornerRadius="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="40dp"
+        app:layout_constraintTop_toBottomOf="@id/botaoCriarConta"
         app:layout_constraintStart_toStartOf="@id/containerPrincipal"
         app:layout_constraintEnd_toEndOf="@id/containerPrincipal" />
 

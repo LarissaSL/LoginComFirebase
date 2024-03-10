@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.google.firebase.ktx.Firebase;
-
 public class MainActivity extends AppCompatActivity {
 
 
@@ -18,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
         new Handler(getMainLooper()).postDelayed(() -> {
             finish();
-            startActivity(new Intent(this, telaLogin.class));
+            startActivity(new Intent(this, TelaLogin.class));
         }, 4000);
     }
 

@@ -18,10 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-public class telaCadastro extends AppCompatActivity {
+public class TelaCadastro extends AppCompatActivity {
 
     private ActivityTelaCadastroBinding binding;
     private FirebaseAuth auth;
@@ -60,13 +57,13 @@ public class telaCadastro extends AppCompatActivity {
                                             public void onComplete(@NonNull Task<Void> task) {
                                                 if (task.isSuccessful()) {
                                                     // Cadastro bem-sucedido
-                                                    Toast.makeText(telaCadastro.this, mensagemDeSucesso, Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(TelaCadastro.this, mensagemDeSucesso, Toast.LENGTH_SHORT).show();
                                                 }
 
                                                 //Redirecionar para tela Principal do APP depois de 3s
                                                 new Handler(getMainLooper()).postDelayed(() -> {
                                                     finish();
-                                                    startActivity(new Intent(telaCadastro.this, telaPrincipal.class));
+                                                    startActivity(new Intent(TelaCadastro.this, TelaPrincipal.class));
                                                 }, 3000);
                                             }
                                         });
@@ -75,10 +72,10 @@ public class telaCadastro extends AppCompatActivity {
                                 // O e-mail já está em uso
                                 Exception exception = task.getException();
                                 if (exception instanceof FirebaseAuthUserCollisionException) {
-                                    Toast.makeText(telaCadastro.this, "E-mail já está em Uso.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(TelaCadastro.this, "E-mail já está em Uso.", Toast.LENGTH_SHORT).show();
                                 } else {
                                     // Erro genérico
-                                    Toast.makeText(telaCadastro.this, mensagemDeErro, Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(TelaCadastro.this, mensagemDeErro, Toast.LENGTH_SHORT).show();
                                 }
 
                             }
@@ -105,6 +102,11 @@ public class telaCadastro extends AppCompatActivity {
             return false;
         }
         return true;
+    }
+
+    public void irTelaLogin(View view) {
+        Intent in = new Intent(this, TelaLogin.class);
+        startActivity(in);
     }
 
 }
